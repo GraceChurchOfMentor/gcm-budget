@@ -54,7 +54,8 @@ jobs:
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Create empty data files
         run: |
-          touch \
+          ls -la \
+          && touch \
             data/chart--avb-prior-month.json \
             data/chart--avb-ytd.json \
             data/chart--budget-breakdown.json \
