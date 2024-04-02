@@ -41,7 +41,7 @@ jobs:
       - name: Install NodeJS 20
         run: |
           curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - \
-          && sudo apt install -y nodejs
+          && sudo apt install -y nodejs npm
       - name: Checkout
         uses: actions/checkout@v4
         with:
