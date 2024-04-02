@@ -6,4 +6,9 @@
 <body>
   {{ block "main" . }}{{ end }}
 </body>
+<script>
+  document.querySelectorAll('.chartjs').forEach(el => {
+    const obj = JSON.parse(el.dataset.chartData)
+  })
+</script>
 </html>
