@@ -33,7 +33,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.124.0
-      AIRTABLE_API_TOKEN: ${{ secrets.AIRTABLE_API_TOKEN }}
     steps:
       - name: Install Hugo CLI
         run: |
@@ -54,8 +53,9 @@ jobs:
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Retrieve data from Airtable
-        run: |
-          npm run prebuild
+        env:
+          AIRTABLE_API_TOKEN: ${{ secrets.AIRTABLE_API_TOKEN }}
+        run: npm run prebuild
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
