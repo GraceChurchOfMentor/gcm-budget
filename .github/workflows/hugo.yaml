@@ -55,6 +55,13 @@ jobs:
       - name: Retrieve data from Airtable
         env:
           AIRTABLE_API_TOKEN: ${{ secrets.AIRTABLE_API_TOKEN }}
+      - name: Create empty data files
+        run: |
+          touch \
+            data/chart--avb-prior-month.json \
+            data/chart--avb-ytd.json \
+            data/chart--budget-breakdown.json \
+            data/faqs.json
         run: npm run prebuild
       - name: Build with Hugo
         env:
