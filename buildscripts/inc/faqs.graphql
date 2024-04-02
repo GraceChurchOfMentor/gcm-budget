@@ -1,0 +1,15 @@
+type Query {
+  faqs: [Category]
+}
+
+type Category {
+  name: String
+  questions: [Question]
+}
+
+type Question {
+  slug: String
+  category: String
+  question: String
+  answer: String
+}

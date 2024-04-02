@@ -1,0 +1,24 @@
+{{ define "main" }}
+  {{ $blocks := where .Site.Pages "Type" "blocks" }}
+  {{ $content := .Content }}
+  <div class="grid-container">
+    {{ range page.Params.blocks }}
+      {{ if eq .type "main" }}
+        <main {{ with .class }}class="{{ . }}"{{ end }}>
+          {{ $content }}
+        </main>
+      {{ end }}
+      {{ if eq .type "content" }}
+        {{ $class := .class }}
+        {{ range where $blocks "Params.slug" .slug }}
+          <section class="block {{ .Params.class }}{{ with $class }} {{ $class }}{{ end }}" data-title="{{ .Title }}">
+            {{ .Content }}
+          </section>
+        {{ end }}
+      {{ end }}
+      {{ if eq .type "partial" }}
+        {{ partial .slug  (dict "class" .class) }}
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}

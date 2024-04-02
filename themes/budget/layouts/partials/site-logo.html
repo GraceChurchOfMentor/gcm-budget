@@ -1,0 +1,10 @@
+{{ $image := resources.Get "images/gcm-logo-horizontal-trans-bg-no-margin@4x.png" }}
+<section class="site-logo{{ with .class }} {{ . }}{{ end }}">
+  <a href="https://gracechurchmentor.org">
+    {{ with $image }}
+      <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="Grace Church of Mentor" />
+    {{ else }}
+      <h1>Grace Church of Mentor</h1>
+    {{ end }}
+  </a>
+</section>

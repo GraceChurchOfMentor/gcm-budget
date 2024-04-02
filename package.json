@@ -1,0 +1,23 @@
+{
+  "name": "gcm-budget",
+  "version": "1.0.0",
+  "description": "A microsite explaining the church budget",
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "start": "hugo serve -D",
+    "build": "hugo -D",
+    "deploy": "hugo --minify",
+    "prestart": "node --experimental-modules ./buildscripts/airtable.mjs",
+    "prebuild": "node --experimental-modules ./buildscripts/airtable.mjs"
+  },
+  "author": "Grace Church of Mentor",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-tools/graphql-file-loader": "^8.0.1",
+    "@graphql-tools/load": "^8.0.2",
+    "@graphql-tools/schema": "^10.0.3",
+    "airtable": "^0.12.2",
+    "dotenv": "^16.4.5",
+    "graphql": "^16.8.1"
+  }
+}

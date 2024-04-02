@@ -1,0 +1,32 @@
+type Query {
+  charts: [Chart!]
+  datasets: [Dataset!]
+  dataPoints: [DataPoint!]
+  chart(id: String, name: String): Chart
+  dataset(id: String!): Dataset
+  dataPoint(id: String!): DataPoint
+}
+
+type Chart {
+  type: String!
+  data: ChartData!
+}
+
+type ChartData {
+  labels: [String]
+  datasets: [Dataset]
+}
+
+type Dataset {
+  label: String
+  type: String
+  backgroundColor: [String]
+  axis: String
+  data: [Float]
+}
+
+type DataPoint {
+  label: String
+  value: Float!
+  color: String
+}

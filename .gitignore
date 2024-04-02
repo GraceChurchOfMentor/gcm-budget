@@ -1,0 +1,7 @@
+.env
+public/*
+node_modules/*
+data/chart--avb-prior-month.json
+data/chart--avb-ytd.json
+data/chart--budget-breakdown.json
+data/faqs.json

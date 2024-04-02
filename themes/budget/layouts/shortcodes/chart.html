@@ -1,0 +1,8 @@
+{{ $type := .Get "type" }}
+{{ $data := .Get "data" }}
+{{ $class := .Get "class" }}
+{{ $partial := printf "partials/charts/%s.html" $type }}
+<div class="chart-wrapper {{ $type }}{{ with $class }} {{ $class }}{{ end }}" data-chart-type="{{ $type }}" data-chart-id="{{ $data }}">
+  {{ .Inner | markdownify }}
+  {{ partial $partial (index .Site.Data $data) }}
+</div>

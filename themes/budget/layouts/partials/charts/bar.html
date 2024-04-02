@@ -1,0 +1,6 @@
+<canvas class="chartjs chartjs-bar" data-chart-data="{{ . | jsonify }}"></canvas>
+<script>
+  document.querySelectorAll('.chartjs').forEach(el => {
+    const obj = JSON.parse(el.dataset.chartData)
+  })
+</script>

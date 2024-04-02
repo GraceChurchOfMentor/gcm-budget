@@ -1,0 +1,15 @@
+<section class="faq">
+  {{ range $category := . }}
+  <section>
+    <h3>{{ $category.name }}</h3>
+    <ul>
+      {{ range $question := $category.questions }}
+      <li>
+        <h4>{{ $question.question }}</h4>
+        <p>{{ $question.answer }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+</section>
