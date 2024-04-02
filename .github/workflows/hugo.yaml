@@ -52,14 +52,8 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Create empty data files
-        run: |
-          ls -la \
-          && touch \
-            data/chart--avb-prior-month.json \
-            data/chart--avb-ytd.json \
-            data/chart--budget-breakdown.json \
-            data/faqs.json
+      - name: Create empty data directory
+        run: mkdir data
       - name: Retrieve data from Airtable
         env:
           AIRTABLE_API_TOKEN: ${{ secrets.AIRTABLE_API_TOKEN }}
