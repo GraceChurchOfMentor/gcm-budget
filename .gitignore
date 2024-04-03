@@ -5,3 +5,6 @@ data/chart--avb-prior-month.json
 data/chart--avb-ytd.json
 data/chart--budget-breakdown.json
 data/faqs.json
+resources/_gen/*
+
+.DS_Store

@@ -1,0 +1,12 @@
+.site-logo {
+  margin-bottom: 2rem;
+
+  a {
+    display: block;
+    width: 20rem;
+
+    img {
+      filter: var(--site-logo-filter);
+    }
+  }
+}

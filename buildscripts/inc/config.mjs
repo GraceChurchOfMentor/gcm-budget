@@ -12,6 +12,7 @@ const Config = {
                 label,
                 type,
                 backgroundColor,
+                borderColor,
                 axis,
                 data
               }
@@ -25,14 +26,14 @@ const Config = {
         plugins: {
           tooltip: { enabled: false },
           legend: { display: false },
-          deferred: { yOffset: 300 },
+          // deferred: { yOffset: 300 },
           datalabels: {
             labels: {
               default: {
                 color: 'white',
                 font: {
                   size: 18,
-                  weight: 'bold'
+                  weight: 400
                 },
                 align: 'center',
                 formatter: 'doughnutLabelFormatter'
@@ -54,6 +55,7 @@ const Config = {
                 label,
                 type,
                 backgroundColor,
+                borderColor,
                 axis,
                 data
               }
@@ -65,7 +67,7 @@ const Config = {
         hover: { mode: null },
         plugins: {
           tooltip: { enabled: false },
-          deferred: { yOffset: 300 },
+          // deferred: { yOffset: 300 },
         },
         scales: {
           y: {
@@ -88,6 +90,7 @@ const Config = {
                 label,
                 type,
                 backgroundColor,
+                borderColor,
                 axis,
                 data
               }
@@ -99,7 +102,7 @@ const Config = {
         hover: { mode: null },
         plugins: {
           tooltip: { enabled: false },
-          deferred: { yOffset: 300 },
+          // deferred: { yOffset: 300 },
         },
         scales: {
           y: {

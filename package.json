@@ -4,9 +4,9 @@
   "description": "A microsite explaining the church budget",
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
-    "start": "hugo serve -D",
-    "build": "hugo -D",
-    "deploy": "hugo --minify",
+    "start": "hugo serve --cleanDestinationDir",
+    "build": "hugo --cleanDestinationDir",
+    "deploy": "hugo --gc --minify",
     "prestart": "node --experimental-modules ./buildscripts/airtable.mjs",
     "prebuild": "node --experimental-modules ./buildscripts/airtable.mjs"
   },

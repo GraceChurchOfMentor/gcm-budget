@@ -21,6 +21,7 @@ type Dataset {
   label: String
   type: String
   backgroundColor: [String]
+  borderColor: [String]
   axis: String
   data: [Float]
 }

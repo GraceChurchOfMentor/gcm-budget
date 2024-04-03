@@ -1,0 +1,46 @@
+html {
+  font-size: calc(100% / 16 * 10);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  // block
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch;
+  margin: 4rem 2rem;
+
+  // colors
+  color-scheme: light dark;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  // typography
+  font-family: 'Montserrat', sans-serif;
+  font-weight: var(--text-font-weight-normal);
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--headings-text-color);
+  font-weight: var(--text-font-weight-bold);
+}
+
+a {
+  color: var(--link-text-color);
+}
+
+blockquote {
+  font-size: 1.8rem;
+  margin-inline: 0;
+  padding: 0;
+  font-style: italic;
+  font-weight: var(--text-font-weight-light);
+}
+

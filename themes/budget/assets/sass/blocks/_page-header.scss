@@ -1,0 +1,34 @@
+.page-header {
+  container-type: inline-size;
+  margin-bottom: 4rem;
+  color: var(--headings-text-color);
+
+  h1 {
+    margin: 0;
+    font-size: 8cqi;
+    text-transform: uppercase;
+    line-height: 1;
+    text-align: justify;
+    text-align-last: justify;
+    letter-spacing: 0.7cqi;
+    font-weight: 700;
+
+    strong {
+      display: block;
+      font-size: 11.5cqi;
+      font-weight: 900;
+      letter-spacing: 0.6cqi;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 3.4cqi;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1.6;
+    text-align: justify;
+    text-align-last: justify;
+    letter-spacing: 0.7cqi;
+  }
+}

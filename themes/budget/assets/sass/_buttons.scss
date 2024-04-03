@@ -1,0 +1,30 @@
+@use 'hugo:vars' as h;
+@use 'sass:color';
+
+.button {
+  --bg-color: var(--color--blue);
+  --text-color: white;
+  display: block;
+  background: var(--bg-color);
+  line-height: 4rem;
+  padding: 0 4rem;
+  color: var(--text-color);
+  text-decoration: none;
+  margin-bottom: .5rem;
+  border-radius: .5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  box-sizing: border-box;
+
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2));
+  }
+
+  &.button-green {
+    --bg-color: var(--color--green);
+  }
+}
+

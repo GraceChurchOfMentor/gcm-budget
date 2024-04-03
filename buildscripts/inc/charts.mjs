@@ -18,9 +18,9 @@ const maps = {
     'Bar': 'bar'
   },
   chartColors: {
-    'Blue': '#00568a',
-    'Dark Blue': '#042b48',
-    'Green': '#7a9d4a'
+    'Blue': 'blue',
+    'Dark Blue': 'darkBlue',
+    'Green': 'green'
   },
   formatters: {
     'Percent (%)': 'percent',
@@ -120,6 +120,12 @@ const processCharts = (records, writeCallback) => {
       label: dataset => dataset.fields['Label'],
       type: dataset => maps.chartTypes[dataset.fields['Type']],
       backgroundColor: dataset => {
+        if (dataset.fields['Color']) {
+          return [maps.chartColors[dataset.fields['Color']]]
+        }
+        return aggregateFields(getDataPointsByDataset(dataset, records), 'Color', color => maps.chartColors[color])
+      },
+      borderColor: dataset => {
         if (dataset.fields['Color']) {
           return [maps.chartColors[dataset.fields['Color']]]
         }
