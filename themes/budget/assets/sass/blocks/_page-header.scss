@@ -21,11 +21,29 @@
   }
 
   p {
-    margin: 0;
-    font-size: 3.4cqi;
-    font-weight: 300;
+    margin: -.4rem 0 0 0;
+    font-size: 6cqi;
+    font-weight: 200;
     text-transform: uppercase;
-    line-height: 0.6;
-    letter-spacing: 0.75cqi;
+    line-height: 1.2;
+    letter-spacing: 1.2cqi;
+    text-align: center;
+
+    span {
+      display: block;
+    }
+  }
+
+  @container (min-width: 480px) {
+    p {
+      font-size: 3.4cqi;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: 0.75cqi;
+
+      span {
+        display: inline;
+      }
+    }
   }
 }

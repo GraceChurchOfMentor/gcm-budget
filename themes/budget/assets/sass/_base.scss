@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   align-items: stretch;
-  margin: 4rem 2rem 0;
+  margin: 2rem 2rem 0;
 
   // colors
   color-scheme: light dark;
@@ -83,7 +83,7 @@ blockquote {
 
 @media screen and (min-width: vars.$column-breakpoint-min-width) {
   body {
-    margin-inline: 4rem;
+    margin: 4rem;
   }
 
   footer {
