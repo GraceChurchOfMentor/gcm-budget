@@ -20,7 +20,7 @@
 
   &:hover, &:focus {
     --bg-color: var(--theme-color-1-darker);
-    // background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4));
+    --text-color: var(--theme-color-offwhite-lighter);
   }
 
   &.button-color-2 {

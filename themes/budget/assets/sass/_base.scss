@@ -57,11 +57,12 @@ p {
 }
 
 a {
-  color: var(--link-text-color);
+  --text-color: var(--link-text-color);
+  color: var(--text-color);
   font-weight: var(--text-font-weight-heavy);
 
   &:hover, &:focus {
-    color: var(--link-text-color-hover);
+    --text-color: var(--link-text-color-hover);
   }
 }
 
