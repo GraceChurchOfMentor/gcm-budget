@@ -39,6 +39,8 @@
   --site-logo-filter: none;
   --link-text-color: var(--theme-color-1-darker);
   --link-text-color-hover: var(--theme-color-1);
+  --link-text-color-alt: var(--theme-color-2-darker);
+  --link-text-color-alt-hover: var(--theme-color-2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -63,6 +65,8 @@
     --site-logo-filter: contrast(000) brightness(100);
     --link-text-color: var(--theme-color-1-lighter);
     --link-text-color-hover: var(--theme-color-1);
+    --link-text-color-alt: var(--theme-color-2-lighter);
+    --link-text-color-alt-hover: var(--theme-color-2);
   }
 }
 

@@ -1,11 +1,11 @@
 @use 'hugo:vars' as h;
 
 .button {
-  --bg-color: var(--theme-color-1);
-  --text-color: var(--theme-color-offwhite-lighter);
+  --bg-color: var(--link-text-color);
+  --text-color: var(--link-text-color);
   display: block;
-  background-color: var(--bg-color);
-  // background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2));
+  border: .2rem solid var(--bg-color);
+  background: transparent;
   line-height: 3em;
   padding: 0 4rem;
   color: var(--text-color);
@@ -19,15 +19,18 @@
   box-sizing: border-box;
 
   &:hover, &:focus {
-    --bg-color: var(--theme-color-1-darker);
+    --bg-color: var(--link-text-color-hover);
     --text-color: var(--theme-color-offwhite-lighter);
+    background-color: var(--bg-color);
   }
 
-  &.button-color-2 {
-    --bg-color: var(--theme-color-2);
+  &.button-alt {
+    --bg-color: var(--link-text-color-alt);
+    --text-color: var(--link-text-color-alt);
 
     &:hover, &:focus {
-      --bg-color: var(--theme-color-2-darker);
+      --bg-color: var(--link-text-color-alt-hover);
+      --text-color: var(--theme-color-offwhite-lighter);
     }
   }
 }
