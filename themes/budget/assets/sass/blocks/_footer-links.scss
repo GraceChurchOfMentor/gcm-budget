@@ -1,0 +1,28 @@
+@use 'vars';
+
+.grid-container section.footer-links {
+  container-type: normal;
+  display: block;
+  position: sticky;
+  bottom: 0;
+  margin: 0;
+  padding: 2rem 0;
+  background-color: var(--bg-color);
+
+  .site-links {
+    display: flex;
+    justify-content: stretch;
+    gap: 1rem;
+
+    .button {
+      flex: 1;
+      margin: 0;
+      font-size: 1.4rem;
+      padding: 0;
+    }
+  }
+
+  @media screen and (min-width: vars.$column-breakpoint-min-width) {
+    display: none;
+  }
+}

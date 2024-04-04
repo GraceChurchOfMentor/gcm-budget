@@ -1,3 +1,5 @@
+@use 'vars';
+
 html {
   font-size: calc(100% / 16 * 10);
 }
@@ -13,7 +15,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   align-items: stretch;
-  margin: 4rem 2rem;
+  margin: 4rem 2rem 0;
 
   // colors
   color-scheme: light dark;
@@ -79,3 +81,12 @@ blockquote {
   font-weight: var(--text-font-weight-light);
 }
 
+@media screen and (min-width: vars.$column-breakpoint-min-width) {
+  body {
+    margin-inline: 4rem;
+  }
+
+  footer {
+    text-align: right;
+  }
+}

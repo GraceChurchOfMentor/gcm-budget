@@ -4,3 +4,12 @@
   max-width: 50rem;
 }
 
+@container (min-width: 600px) {
+  .block.charts-giving-vs-actual .chart-wrapper {
+    width: calc(50% - 2rem);
+    float: left;
+  }
+  .block.charts-giving-vs-actual .chart-wrapper:last-child {
+    float: right;
+  }
+}

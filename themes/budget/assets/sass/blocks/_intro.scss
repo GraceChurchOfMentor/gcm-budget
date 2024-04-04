@@ -1,0 +1,22 @@
+@use 'vars';
+
+.block.intro {
+  margin-top: 1rem;
+
+  :first-child {
+    margin-top: 0;
+  }
+
+  .site-links {
+    display: none;
+  }
+
+  @media screen and (min-width: vars.$column-breakpoint-min-width) {
+    position: sticky;
+    top: 4rem;
+
+    .site-links {
+      display: block;
+    }
+  }
+}

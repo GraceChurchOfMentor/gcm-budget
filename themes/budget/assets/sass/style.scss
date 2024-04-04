@@ -1,70 +1,22 @@
 /**
  * Base
  */
-@use '_vars';
-@use '_base';
-@use '_themes';
-@use '_grid';
+@use 'vars';
+@use 'base';
+@use 'themes';
+@use 'grid';
 
 /**
  * Components
  */
-@use '_charts';
-@use '_buttons';
+@use 'charts';
+@use 'buttons';
 
 /**
  * Blocks
  */
-@use 'blocks/_logo';
-@use 'blocks/_page-header';
-@use 'blocks/_faq';
-
-/**
- * BLOCKS
- */
-.block.intro {
-  margin-top: 1rem;
-}
-.block.intro :first-child {
-  margin-top: 0;
-}
-
-@container (min-width: 500px) {
-  .button {
-    display: inline-block;
-    width: auto;
-  }
-}
-
-@container (min-width: 600px) {
-  .block.charts-giving-vs-actual .chart-wrapper {
-    width: calc(50% - 2rem);
-    float: left;
-  }
-  .block.charts-giving-vs-actual .chart-wrapper:last-child {
-    float: right;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  body {
-    margin-inline: 4rem;
-  }
-  .grid-container {
-    max-width: 120rem;
-  }
-  .grid-container .left-column {
-    float: left;
-    width: calc(100% / 3 - 4rem);
-  }
-  .grid-container .right-column {
-    float: right;
-    /* margin-left: calc(100% / 3 + 4rem); */
-    width: calc(100% / 3 * 2 - 4rem);
-  }
-
-  .block.intro {
-    position: sticky;
-    top: 4rem;
-  }
-}
+@use 'blocks/logo';
+@use 'blocks/page-header';
+@use 'blocks/intro';
+@use 'blocks/faq';
+@use 'blocks/footer-links';

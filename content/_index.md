@@ -31,5 +31,7 @@ blocks:
   - type: partial
     slug: footer
     class: right-column
+  - type: content
+    slug: footer-links
+    class: footer-links
 ---
-&copy; {{ .Now.Year }} Grace Church of Mentor. All rights reserved.

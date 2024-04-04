@@ -10,4 +10,4 @@ church, which reflects the Great Commission:
 > Grace Church of Mentor exists to glorify God by evangelizing the lost and
 > equipping the saints with the goal of Christ-likeness!
 
-{{< sitelinks class="test" >}}
+{{< sitelinks >}}

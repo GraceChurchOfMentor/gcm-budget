@@ -1,10 +1,27 @@
+@use 'vars';
+
 .grid-container {
   width: 100%;
   max-width: 60rem;
   margin: 0 auto;
-}
-.grid-container section {
-  container-type: inline-size;
-  margin-bottom: 2rem;
-  width: 100%;
+
+  section {
+    container-type: inline-size;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  @media screen and (min-width: vars.$column-breakpoint-min-width) {
+    max-width: 120rem;
+
+    .left-column {
+      float: left;
+      width: calc(100% / 3 - 4rem);
+    }
+    .right-column {
+      float: right;
+      /* margin-left: calc(100% / 3 + 4rem); */
+      width: calc(100% / 3 * 2 - 4rem);
+    }
+  }
 }
