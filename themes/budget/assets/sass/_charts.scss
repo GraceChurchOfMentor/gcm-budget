@@ -4,12 +4,17 @@
   max-width: 50rem;
 }
 
-@container (min-width: 600px) {
-  .block.charts-giving-vs-actual .chart-wrapper {
-    width: calc(50% - 2rem);
-    float: left;
-  }
-  .block.charts-giving-vs-actual .chart-wrapper:last-child {
-    float: right;
+.block.charts-giving-vs-actual {
+  container-type: inline-size;
+
+  @container (min-width: 600px) {
+    .chart-wrapper {
+      width: calc(50% - 2rem);
+      float: left;
+
+      &:last-child {
+        float: right;
+      }
+    }
   }
 }
