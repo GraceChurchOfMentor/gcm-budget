@@ -37,7 +37,8 @@
   --text-font-weight-black: 900;
   --headings-text-color: var(--theme-color-3);
   --site-logo-filter: none;
-  --link-text-color: var(--theme-color-1);
+  --link-text-color: var(--theme-color-1-darker);
+  --link-text-color-hover: var(--theme-color-1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -60,7 +61,8 @@
     --text-font-weight-light: 200;
     --headings-text-color: var(--theme-color-2);
     --site-logo-filter: contrast(000) brightness(100);
-    --link-text-color: var(--theme-color-1);
+    --link-text-color: var(--theme-color-1-lighter);
+    --link-text-color-hover: var(--theme-color-1);
   }
 }
 

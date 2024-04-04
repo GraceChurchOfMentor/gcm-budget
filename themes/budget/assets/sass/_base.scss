@@ -59,6 +59,10 @@ p {
 a {
   color: var(--link-text-color);
   font-weight: var(--text-font-weight-heavy);
+
+  &:hover, &:focus {
+    color: var(--link-text-color-hover);
+  }
 }
 
 ul, ol {
