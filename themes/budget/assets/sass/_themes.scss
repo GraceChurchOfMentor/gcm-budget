@@ -2,44 +2,42 @@
 @use 'sass:color';
 
 :where(body) {
-  --color--green: #{h.$color-green};
-  --color--blue: #{h.$color-blue};
-  --color--dark-blue: #{h.$color-dark-blue};
+  --theme-color-1: #{h.$theme-color-1};
+  --theme-color-2: #{h.$theme-color-2};
+  --theme-color-3: #{h.$theme-color-3};
 
-  --bg-color: #f2f2e9;
-  --text-color: #33332e;
+  --bg-color: #{h.$theme-bg-color};
+  --text-color: #{h.$theme-text-color};
   --text-font-weight-normal: 400;
+  --text-font-weight-heavy: 500;
   --text-font-weight-bold: 700;
   --text-font-weight-light: 300;
   --text-font-weight-black: 900;
-  --headings-text-color: var(--color--dark-blue);
+  --headings-text-color: var(--theme-color-3);
   --site-logo-filter: none;
-  --link-text-color: var(--color--green);
+  --link-text-color: var(--theme-color-1);
 }
 
 @media (prefers-color-scheme: dark) {
   :where(body) {
-    --color--green: #{h.$color-green-darkmode};
-    --color--blue: #{h.$color-blue-darkmode};
-    --color--dark-blue: #{h.$color-dark-blue-darkmode};
+    --theme-color-1: #{h.$theme-color-1-darkmode};
+    --theme-color-2: #{h.$theme-color-2-darkmode};
+    --theme-color-3: #{h.$theme-color-3-darkmode};
 
-    --bg-color: #33332e;
-    --text-color: #f2f2e9;
-    --text-font-weight-normal: 200;
+    --bg-color: #{h.$theme-bg-color-darkmode};
+    --text-color: #{h.$theme-text-color-darkmode};
+    --text-font-weight-normal: 300;
+    --text-font-weight-heavy: 400;
     --text-font-weight-bold: 600;
-    --text-font-weight-light: 100;
-    --headings-text-color: var(--color--blue);
-    // --headings-text-color: #{color.adjust(h.$color-blue, $lightness: 50%, $saturation: -50%)};
+    --text-font-weight-light: 200;
+    --headings-text-color: var(--theme-color-2);
     --site-logo-filter: contrast(000) brightness(100);
+    --link-text-color: var(--theme-color-1);
   }
 }
 
-.background-color--green {
-  background-color: var(--color--green);
-}
-.background-color--blue {
-  background-color: var(--color--blue);
-}
-.background-color--darkBlue {
-  background-color: var(--color--dark-blue);
+@for $c from 1 through 3 {
+  .background-color--theme-color-#{$c} {
+    background-color: var(--theme-color-#{$c});
+  }
 }

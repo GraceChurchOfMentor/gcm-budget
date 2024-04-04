@@ -2,7 +2,7 @@
 @use 'sass:color';
 
 .button {
-  --bg-color: var(--color--blue);
+  --bg-color: var(--theme-color-1);
   --text-color: white;
   display: block;
   background: var(--bg-color);
@@ -23,8 +23,8 @@
     background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2));
   }
 
-  &.button-green {
-    --bg-color: var(--color--green);
+  &.button-color-2 {
+    --bg-color: var(--theme-color-2);
   }
 }
 

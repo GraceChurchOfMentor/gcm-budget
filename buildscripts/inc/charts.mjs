@@ -18,9 +18,9 @@ const maps = {
     'Bar': 'bar'
   },
   chartColors: {
-    'Blue': 'blue',
-    'Dark Blue': 'darkBlue',
-    'Green': 'green'
+    'Color 1': 'theme-color-1',
+    'Color 2': 'theme-color-2',
+    'Color 3': 'theme-color-3'
   },
   formatters: {
     'Percent (%)': 'percent',

@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
       },
       barYAxisFormatter: (value, index, values) => {
         const parts = {
-          prefix: '',
+          prefix: '$',
           value: value,
           suffix: ''
         }
@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", function() {
           parts.value = value / 1000
           parts.suffix = 'K'
         }
-        if (index === values.length - 1) {
-          parts.prefix = '$'
-        }
+        // if (index === values.length - 1) {
+        //   parts.prefix = '$'
+        // }
 
         return `${parts.prefix}${parts.value}${parts.suffix}`
       }
@@ -54,36 +54,43 @@ document.addEventListener("DOMContentLoaded", function() {
       return computedColor
     }
 
-    const mapColors = (array) => {
-      return array.map(item => {
-        return extractColorFromDom(item)
-      })
+    const rgbToRgba = (string, alpha) => {
+      const rgb = string.replace(/[^\d,]/g, '').split(',')
+      return `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${alpha})`
     }
 
-    const data = JSON.parse(el.dataset.chartData)
-    data.plugins = defaults.plugins[data.type]
+    const json = JSON.parse(el.dataset.chartData)
+    const colors = new Map(Object.entries({
+      'theme-color-1': extractColorFromDom('theme-color-1'),
+      'theme-color-2': extractColorFromDom('theme-color-2'),
+      'theme-color-3': extractColorFromDom('theme-color-3')
+    }))
 
-    const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? true : false
+    json.plugins = defaults.plugins[json.type]
     Chart.defaults.color = window.getComputedStyle(document.body).color
     Chart.defaults.font.family = 'Montserrat'
     Chart.defaults.font.weight = window.getComputedStyle(document.body).fontWeight
     Chart.defaults.font.size = 11
+    Chart.defaults.borderColor = rgbToRgba(window.getComputedStyle(document.body).color, 0.1)
+    console.log(Chart.defaults.borderColor)
 
-    data.data.datasets.forEach(dataset => {
-      dataset.backgroundColor = mapColors(dataset.backgroundColor)
-      dataset.borderColor = mapColors(dataset.borderColor)
+    json.data.datasets.forEach(dataset => {
+      dataset.backgroundColor = dataset.backgroundColor.map(color => colors.get(color))
+      dataset.borderColor = dataset.borderColor.map(color => colors.get(color))
     })
 
-    const datalabelsFormatter = getPropertyFromPath(data, ['options', 'plugins', 'datalabels', 'labels', 'default', 'formatter'])
+    const datalabelsFormatter = getPropertyFromPath(json, ['options', 'plugins', 'datalabels', 'labels', 'default', 'formatter'])
     if (datalabelsFormatter) {
-      data.options.plugins.datalabels.labels.default.formatter = callbacks[datalabelsFormatter]
+      json.options.plugins.datalabels.labels.default.formatter = callbacks[datalabelsFormatter]
     }
 
-    const yAxisFormatter = getPropertyFromPath(data, ['options', 'scales', 'y', 'ticks', 'callback'])
+    const yAxisFormatter = getPropertyFromPath(json, ['options', 'scales', 'y', 'ticks', 'callback'])
     if (yAxisFormatter) {
-      data.options.scales.y.ticks.callback = callbacks[yAxisFormatter]
+      json.options.scales.y.ticks.callback = callbacks[yAxisFormatter]
     }
 
-    new Chart(el, data)
+    document.fonts.ready.then(() => {
+      new Chart(el, json)
+    })
   })
 })
