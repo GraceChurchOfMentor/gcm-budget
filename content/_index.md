@@ -21,7 +21,7 @@ blocks:
     class: right-column charts-giving-vs-actual
   - type: content
     slug: budget-highlights
-    class: right-column
+    class: right-column budget-highlights
   - type: content
     slug: handouts
     class: right-column
