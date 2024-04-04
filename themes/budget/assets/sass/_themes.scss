@@ -2,12 +2,34 @@
 @use 'sass:color';
 
 :where(body) {
-  --theme-color-1: #{h.$theme-color-1};
-  --theme-color-2: #{h.$theme-color-2};
-  --theme-color-3: #{h.$theme-color-3};
+  $theme-colors: (
+    "color-offwhite": h.$theme-color-offwhite,
+    "color-darkgray": h.$theme-color-darkgray,
+    "light-color-1": h.$theme-light-color-1,
+    "light-color-2": h.$theme-light-color-2,
+    "light-color-3": h.$theme-light-color-3,
+    "dark-color-1": h.$theme-dark-color-1,
+    "dark-color-2": h.$theme-dark-color-2,
+    "dark-color-3": h.$theme-dark-color-3
+  );
 
-  --bg-color: #{h.$theme-bg-color};
-  --text-color: #{h.$theme-text-color};
+  @each $name, $color in $theme-colors {
+    --theme-#{$name}: #{$color};
+    --theme-#{$name}-lighter: #{color.adjust($color, $lightness: 10%)};
+    --theme-#{$name}-darker: #{color.adjust($color, $lightness: -10%)};
+  }
+
+  --theme-color-1: var(--theme-light-color-1);
+  --theme-color-2: var(--theme-light-color-2);
+  --theme-color-3: var(--theme-light-color-3);
+  --theme-color-1-lighter: var(--theme-light-color-1-lighter);
+  --theme-color-2-lighter: var(--theme-light-color-2-lighter);
+  --theme-color-3-lighter: var(--theme-light-color-3-lighter);
+  --theme-color-1-darker: var(--theme-light-color-1-darker);
+  --theme-color-2-darker: var(--theme-light-color-2-darker);
+  --theme-color-3-darker: var(--theme-light-color-3-darker);
+  --bg-color: var(--theme-color-offwhite);
+  --text-color: var(--theme-color-darkgray);
   --text-font-weight-normal: 400;
   --text-font-weight-heavy: 500;
   --text-font-weight-bold: 700;
@@ -20,12 +42,18 @@
 
 @media (prefers-color-scheme: dark) {
   :where(body) {
-    --theme-color-1: #{h.$theme-color-1-darkmode};
-    --theme-color-2: #{h.$theme-color-2-darkmode};
-    --theme-color-3: #{h.$theme-color-3-darkmode};
+    --theme-color-1: var(--theme-dark-color-1);
+    --theme-color-2: var(--theme-dark-color-2);
+    --theme-color-3: var(--theme-dark-color-3);
+    --theme-color-1-lighter: var(--theme-dark-color-1-lighter);
+    --theme-color-2-lighter: var(--theme-dark-color-2-lighter);
+    --theme-color-3-lighter: var(--theme-dark-color-3-lighter);
+    --theme-color-1-darker: var(--theme-dark-color-1-darker);
+    --theme-color-2-darker: var(--theme-dark-color-2-darker);
+    --theme-color-3-darker: var(--theme-dark-color-3-darker);
 
-    --bg-color: #{h.$theme-bg-color-darkmode};
-    --text-color: #{h.$theme-text-color-darkmode};
+    --bg-color: var(--theme-color-darkgray);
+    --text-color: var(--theme-color-offwhite);
     --text-font-weight-normal: 300;
     --text-font-weight-heavy: 400;
     --text-font-weight-bold: 600;

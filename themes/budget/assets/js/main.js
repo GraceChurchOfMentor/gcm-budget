@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
     Chart.defaults.font.weight = window.getComputedStyle(document.body).fontWeight
     Chart.defaults.font.size = 11
     Chart.defaults.borderColor = rgbToRgba(window.getComputedStyle(document.body).color, 0.1)
-    console.log(Chart.defaults.borderColor)
 
     json.data.datasets.forEach(dataset => {
       dataset.backgroundColor = dataset.backgroundColor.map(color => colors.get(color))
