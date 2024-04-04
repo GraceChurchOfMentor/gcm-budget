@@ -11,5 +11,5 @@ slug: charts-giving-vs-actual
 {{< /chart >}}
 
 {{< chart type="bar" data="chart--avb-prior-month" >}}
-### Prior Month
+### Month by Week
 {{< /chart >}}
