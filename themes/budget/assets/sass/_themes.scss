@@ -41,6 +41,7 @@
   --link-text-color-hover: var(--theme-color-1);
   --link-text-color-alt: var(--theme-color-2-darker);
   --link-text-color-alt-hover: var(--theme-color-2);
+  --footer-links-border-color: var(--theme-color-offwhite-darker);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -67,6 +68,7 @@
     --link-text-color-hover: var(--theme-color-1);
     --link-text-color-alt: var(--theme-color-2-lighter);
     --link-text-color-alt-hover: var(--theme-color-2);
+    --footer-links-border-color: var(--theme-color-darkgray-lighter);
   }
 }
 
