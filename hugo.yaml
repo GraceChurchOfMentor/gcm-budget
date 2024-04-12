@@ -18,6 +18,9 @@ markup:
       attribute:
         block: true
         title: true
+services:
+  googleAnalytics:
+    ID: G-CE4TE4HYWM
 params:
   style:
     # - color_green: '#7a9d4a'
