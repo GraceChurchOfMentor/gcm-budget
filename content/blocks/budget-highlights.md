@@ -6,7 +6,7 @@ slug: budget-highlights
 ---
 ## Changes to Note in the 2024-25 Proposed Budget
 1. Adjusts our offering goal to match actual giving in 2023-24 ($1.3M).
-2. Asks our Pastoral Staff to forego certain compensation benefits and most
+2. Asks our Pastoral Staff to forgo certain compensation benefits and most
 ministries to reduce spending and/or postpone plans.
 3. Affirms our commitment to church planting and beginning the next phase of
 Arch Ministries.
